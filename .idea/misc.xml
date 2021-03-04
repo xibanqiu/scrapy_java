@@ -3,8 +3,7 @@
   <component name="MavenProjectsManager">
     <option name="originalFiles">
       <list>
-        <option value="$PROJECT_DIR$/crawler_parent/pom.xml" />
-        <option value="$PROJECT_DIR$/crawler_api/pom.xml" />
+        <option value="$PROJECT_DIR$/pom.xml" />
         <option value="$PROJECT_DIR$/crawler_service/pom.xml" />
         <option value="$PROJECT_DIR$/crawler_spider/pom.xml" />
       </list>
