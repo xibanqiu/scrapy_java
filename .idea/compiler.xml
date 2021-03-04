@@ -7,15 +7,26 @@
         <sourceTestOutputDir name="target/generated-test-sources/test-annotations" />
         <outputRelativeToContentRoot value="true" />
         <module name="crawler_service" />
+        <module name="crawler_task" />
         <module name="crawler_spider" />
+        <module name="crawler_common_util" />
         <module name="crawler_api" />
       </profile>
     </annotationProcessing>
     <bytecodeTargetLevel>
-      <module name="crawler_api" target="1.6" />
-      <module name="crawler_parent" target="1.6" />
-      <module name="crawler_service" target="1.5" />
-      <module name="crawler_spider" target="1.5" />
+      <module name="cralwer_task" target="11" />
+      <module name="crawler_api" target="11" />
+      <module name="crawler_common_util" target="11" />
+      <module name="crawler_parent" target="11" />
+      <module name="crawler_service" target="11" />
+      <module name="crawler_spider" target="11" />
+      <module name="crawler_task" target="11" />
     </bytecodeTargetLevel>
+  </component>
+  <component name="JavacSettings">
+    <option name="ADDITIONAL_OPTIONS_OVERRIDE">
+      <module name="cralwer_task" options="-parameters" />
+      <module name="crawler_task" options="" />
+    </option>
   </component>
 </project>

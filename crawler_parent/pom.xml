@@ -35,14 +35,13 @@
         <lang3-version>3.5</lang3-version>
         <fastjson-version>1.2.24</fastjson-version>
         <joda-version>2.2.9</joda-version>
+        <jsoup-version>1.10.3</jsoup-version>
 
     </properties>
 
 
     <dependencyManagement>
-
         <dependencies>
-
             <dependency>
                 <groupId>org.apache.httpcomponents</groupId>
                 <artifactId>httpclient</artifactId>
@@ -57,7 +56,14 @@
             <dependency>
                 <groupId>common-io</groupId>
                 <artifactId>common-io</artifactId>
-                <version>${io.version}</version>
+                <version>${io-version}</version>
+            </dependency>
+
+
+            <dependency>
+                <groupId>org.jsoup</groupId>
+                <artifactId>jsoup</artifactId>
+                <version>${jsoup-version}</version>
             </dependency>
 
             <dependency>
@@ -76,7 +82,6 @@
                 <artifactId>joda-time</artifactId>
                 <version>${joda-version}</version>
             </dependency>
-
 
         </dependencies>
 

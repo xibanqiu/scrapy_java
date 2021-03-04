@@ -7,6 +7,8 @@
         <option value="$PROJECT_DIR$/crawler_api/pom.xml" />
         <option value="$PROJECT_DIR$/crawler_service/pom.xml" />
         <option value="$PROJECT_DIR$/crawler_spider/pom.xml" />
+        <option value="$PROJECT_DIR$/crawler_task/pom.xml" />
+        <option value="$PROJECT_DIR$/crawler_common_util/pom.xml" />
       </list>
     </option>
   </component>
