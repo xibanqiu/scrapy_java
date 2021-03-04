@@ -71,11 +71,11 @@
                 <artifactId>commons-langs</artifactId>
                 <version>${lang3-version}</version>
             </dependency>
-            <dependency>
-                <groupId>com.alibab</groupId>
-                <artifactId>fastjson</artifactId>
-                <version>${fastjson-version}</version>
-            </dependency>
+<!--            <dependency>-->
+<!--                <groupId>com.alibab</groupId>-->
+<!--                <artifactId>fastjson</artifactId>-->
+<!--                <version>${fastjson-version}</version>-->
+<!--            </dependency>-->
 
             <dependency>
                 <groupId>joda-time</groupId>
