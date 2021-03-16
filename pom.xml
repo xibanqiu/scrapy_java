@@ -8,8 +8,12 @@
     <artifactId>scrapy_java</artifactId>
     <version>1.0.0</version>
     <modules>
-
+        <module>crawler_base</module>
+        <module>crawler_task</module>
+        <module>crawler_service</module>
+        <module>crawler_spider</module>
     </modules>
+
     <packaging>pom</packaging>
 
     <parent>

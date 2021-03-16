@@ -3,10 +3,13 @@
   <component name="Encoding">
     <file url="file://$PROJECT_DIR$" charset="UTF-8" />
     <file url="file://$PROJECT_DIR$/crawler_api" charset="UTF-8" />
+    <file url="file://$PROJECT_DIR$/crawler_base" charset="UTF-8" />
     <file url="file://$PROJECT_DIR$/crawler_common_util" charset="UTF-8" />
     <file url="file://$PROJECT_DIR$/crawler_parent" charset="UTF-8" />
     <file url="file://$PROJECT_DIR$/crawler_service" charset="UTF-8" />
     <file url="file://$PROJECT_DIR$/crawler_spider" charset="UTF-8" />
+    <file url="file://$PROJECT_DIR$/crawler_task" charset="UTF-8" />
+    <file url="file://$PROJECT_DIR$/crawler_task" charset="UTF-8" />
     <file url="file://$PROJECT_DIR$/crawler_task" charset="UTF-8" />
   </component>
 </project>
