@@ -1,0 +1,93 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<configuration>
+
+	<property name="pattern" value="%d %p [%t] [%c{0}] [%M] - %m%n" />
+	<property name="filePath" value="logs" />
+
+	<appender name="consoleAppender" class="ch.qos.logback.core.ConsoleAppender">
+		<encoder>
+			<Pattern>${pattern}</Pattern>
+		</encoder>
+		<filter class="ch.qos.logback.classic.filter.ThresholdFilter">
+			<level>info</level>
+		</filter>
+	</appender>
+
+	<appender name="dailyRollingFileAppender"
+		class="ch.qos.logback.core.rolling.RollingFileAppender">
+		<File>${filePath}/std.log</File>
+		<rollingPolicy class="ch.qos.logback.core.rolling.TimeBasedRollingPolicy">
+			<FileNamePattern>${filePath}/%d{yyyy-MM-dd}.std.log</FileNamePattern>
+			<maxHistory>30</maxHistory>
+		</rollingPolicy>
+		<encoder>
+			<Pattern>${pattern}</Pattern>
+		</encoder>
+	</appender>
+
+	<appender name="dailyRollingFileAppenderError"
+		class="ch.qos.logback.core.rolling.RollingFileAppender">
+		<File>${filePath}/error.log</File>
+		<rollingPolicy class="ch.qos.logback.core.rolling.TimeBasedRollingPolicy">
+			<FileNamePattern>${filePath}/%d{yyyy-MM-dd}.error.log</FileNamePattern>
+			<maxHistory>30</maxHistory>
+		</rollingPolicy>
+		<encoder>
+			<Pattern>${pattern}</Pattern>
+		</encoder>
+		<filter class="ch.qos.logback.classic.filter.LevelFilter">
+			<level>ERROR</level>
+			<onMatch>ACCEPT</onMatch>
+			<onMismatch>DENY</onMismatch>
+		</filter>
+
+    </appender>
+
+
+	<appender name="crawlerFileAppender" class="ch.qos.logback.core.rolling.RollingFileAppender">
+		<File>${filePath}/crawler.log</File>
+		<rollingPolicy class="ch.qos.logback.core.rolling.TimeBasedRollingPolicy">
+			<FileNamePattern>${filePath}/crawler.log.%d{yyyy-MM-dd}</FileNamePattern>
+			<maxHistory>30</maxHistory>
+		</rollingPolicy>
+		<encoder>
+			<Pattern>${pattern}</Pattern>
+		</encoder>
+	</appender>
+	<logger name="crawlerLog" additivity="false" level="DEBUG">
+		<appender-ref ref="crawlerFileAppender"/>
+	</logger>
+
+	<appender name="statsFileAppender" class="ch.qos.logback.core.rolling.RollingFileAppender">
+		<File>${filePath}/stats.log</File>
+		<rollingPolicy class="ch.qos.logback.core.rolling.TimeBasedRollingPolicy">
+			<FileNamePattern>${filePath}/stats.log.%d{yyyy-MM-dd}</FileNamePattern>
+			<maxHistory>30</maxHistory>
+		</rollingPolicy>
+		<encoder>
+			<Pattern>${pattern}</Pattern>
+		</encoder>
+	</appender>
+	<logger name="statsLog" additivity="false" level="INFO">
+		<appender-ref ref="statsFileAppender"/>
+	</logger>
+
+
+<!-- 	show sql log -->
+   	<logger name="bigbigwork.neptune.scrapy.mapper">
+		<level value="info"/>
+	</logger>
+
+	<!-- 	show date parse log -->
+   	<logger name="com.joestelmach.natty">
+		<level value="error"/>
+	</logger>
+    
+    <root>
+        <level value="info"/>
+        <appender-ref ref="consoleAppender"/>
+        <appender-ref ref="dailyRollingFileAppender"/>
+        <appender-ref ref="dailyRollingFileAppenderError"/>
+    </root>
+
+</configuration>
