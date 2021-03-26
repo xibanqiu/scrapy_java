@@ -41,19 +41,15 @@ public abstract class BaseTask {
 
 	private  int Flag_Recursive = 0;
 	
-	/**
-	 * @author xubenqing
-	 * @date 2020/2/15
-	 * 将爬虫的初始化 ，和增量的提交
-	 */
-	protected Integer flagFirstScrape; // 0表示初始化,1表示新增
+
+	protected Integer flagFirstScrape; //
 	@Autowired
 	private UserBoardFavouriteService userBoardFavouriteService;
 
 
 	@Value("${jhk.stats.url}")
 	protected String jhk_stats;
-	/**统计爬虫新增图片**/
+
 	static final String statApiPath = "pupb/newIncreaseImgs/stats";
 
 	@Value("${es.stats.crawler2}")
@@ -62,11 +58,7 @@ public abstract class BaseTask {
 	protected String es_stats_url;
 	protected Supplier<String> formatYMD = () -> LocalDate.now().format(DateTimeFormatter.BASIC_ISO_DATE);
 
-	/**
-	 * @param flag_first_scrape 0表示初始化,1表示新增
-	 * @author xubenqing
-	 * @date 2020/2/15
-	 */
+
 	protected void newImgStat(Long  id ,Integer flag_first_scrape,Integer origin_type) {
 		Thread thread = new Thread(() -> {
 			SpiderNewImgStat pinNewImgStat = new SpiderNewImgStat();
@@ -151,10 +143,8 @@ public abstract class BaseTask {
 			}
 		}
 	}
-	/**
-	 * 获取程序运行时所需的ID
-	 * @return 程序运行时所需的ID
-	 */
+
+
 	protected List<IdSet> getIds() {
 		List<IdSet> rs = new ArrayList<>();
 		List<PremiumBoard> list = premiumBoardService.pageBySite(siteId,flagFirstScrape);
