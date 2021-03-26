@@ -19,39 +19,10 @@ dataSource:
     minIdle: 1
     initialSize: 1
 
-  ds_sketchup: !!org.apache.commons.dbcp2.BasicDataSource
-    driverClassName: com.mysql.jdbc.Driver
-    url: jdbc:mysql://rm-bp1k5i9g0iyt2jc79o.mysql.rds.aliyuncs.com:3306/sketchup?useSSL=false
-    username: root
-    password: zxcasdqwe123!@#
-    maxTotal: 2
-    maxIdle: 2
-    minIdle: 1
-    initialSize: 1
-
-  ds_jhk: !!org.apache.commons.dbcp2.BasicDataSource
-    driverClassName: com.mysql.jdbc.Driver
-    url: jdbc:mysql://rm-bp1k5i9g0iyt2jc79o.mysql.rds.aliyuncs.com:3306/jhk-test?useSSL=false
-    username: root
-    password: zxcasdqwe123!@#
-    maxTotal: 2
-    maxIdle: 2
-    minIdle: 1
-    initialSize: 1
     
   ds_jhk-user-imgs: !!org.apache.commons.dbcp2.BasicDataSource
     driverClassName: com.mysql.jdbc.Driver
     url: jdbc:mysql://rm-bp1k5i9g0iyt2jc79o.mysql.rds.aliyuncs.com:3306/jhk-user-imgs-test?useSSL=false
-    username: root
-    password: zxcasdqwe123!@#
-    maxTotal: 2
-    maxIdle: 2
-    minIdle: 1
-    initialSize: 1
-
-  ds_site-test: !!org.apache.commons.dbcp2.BasicDataSource
-    driverClassName: com.mysql.jdbc.Driver
-    url: jdbc:mysql://rm-bp1k5i9g0iyt2jc79o.mysql.rds.aliyuncs.com:3306/site-test?useSSL=false
     username: root
     password: zxcasdqwe123!@#
     maxTotal: 2
@@ -66,26 +37,6 @@ defaultDataSourceName: ds_default
 tables:
    sequence_pin_next_id: 
      actualTables: ds_default.sequence_pin_next_id
-
-
-  # ds_sketchup
-   sketchup_source:
-     actualTables: ds_sketchup.sketchup_source
-     databaseStrategy :
-       shardingColumns : none
-       algorithmClassName : com.dangdang.ddframe.rdb.sharding.api.strategy.database.NoneDatabaseShardingAlgorithm
-     tableStrategy :
-       shardingColumns : none
-       algorithmClassName : com.dangdang.ddframe.rdb.sharding.api.strategy.table.NoneTableShardingAlgorithm
-
-   om_sketchup:
-     actualTables: ds_sketchup.om_sketchup
-     databaseStrategy :
-       shardingColumns : none
-       algorithmClassName : com.dangdang.ddframe.rdb.sharding.api.strategy.database.NoneDatabaseShardingAlgorithm
-     tableStrategy :
-       shardingColumns : none
-       algorithmClassName : com.dangdang.ddframe.rdb.sharding.api.strategy.table.NoneTableShardingAlgorithm
 
   # ds_pinterest
    board:
@@ -106,72 +57,6 @@ tables:
      tableStrategy : 
        shardingColumns : none
        algorithmClassName : com.dangdang.ddframe.rdb.sharding.api.strategy.table.NoneTableShardingAlgorithm
-   user_board_favourite_child:
-     actualTables: ds_jhk-user-imgs.user_board_favourite_child
-     databaseStrategy :
-       shardingColumns : none
-       algorithmClassName : com.dangdang.ddframe.rdb.sharding.api.strategy.database.NoneDatabaseShardingAlgorithm
-     tableStrategy :
-       shardingColumns : none
-       algorithmClassName : com.dangdang.ddframe.rdb.sharding.api.strategy.table.NoneTableShardingAlgorithm
-   user_img_favourite: 
-     actualTables: ds_jhk-user-imgs.user_img_favourite
-     databaseStrategy : 
-       shardingColumns : none
-       algorithmClassName : com.dangdang.ddframe.rdb.sharding.api.strategy.database.NoneDatabaseShardingAlgorithm
-     tableStrategy : 
-       shardingColumns : none
-       algorithmClassName : com.dangdang.ddframe.rdb.sharding.api.strategy.table.NoneTableShardingAlgorithm
-   shop_source:
-     actualTables: ds_jhk-user-imgs.shop_source
-     databaseStrategy :
-       shardingColumns : none
-       algorithmClassName : com.dangdang.ddframe.rdb.sharding.api.strategy.database.NoneDatabaseShardingAlgorithm
-     tableStrategy :
-       shardingColumns : none
-       algorithmClassName : com.dangdang.ddframe.rdb.sharding.api.strategy.table.NoneTableShardingAlgorithm
-   shop:
-     actualTables: ds_jhk-user-imgs.shop
-     databaseStrategy :
-       shardingColumns : none
-       algorithmClassName : com.dangdang.ddframe.rdb.sharding.api.strategy.database.NoneDatabaseShardingAlgorithm
-     tableStrategy :
-       shardingColumns : none
-       algorithmClassName : com.dangdang.ddframe.rdb.sharding.api.strategy.table.NoneTableShardingAlgorithm
-   shop_category:
-     actualTables: ds_jhk-user-imgs.shop_category
-     databaseStrategy :
-       shardingColumns : none
-       algorithmClassName : com.dangdang.ddframe.rdb.sharding.api.strategy.database.NoneDatabaseShardingAlgorithm
-     tableStrategy :
-       shardingColumns : none
-       algorithmClassName : com.dangdang.ddframe.rdb.sharding.api.strategy.table.NoneTableShardingAlgorithm
-   shop_board:
-     actualTables: ds_jhk-user-imgs.shop_board
-     databaseStrategy :
-       shardingColumns : none
-       algorithmClassName : com.dangdang.ddframe.rdb.sharding.api.strategy.database.NoneDatabaseShardingAlgorithm
-     tableStrategy :
-       shardingColumns : none
-       algorithmClassName : com.dangdang.ddframe.rdb.sharding.api.strategy.table.NoneTableShardingAlgorithm
-
-# ds_site
-   store_list:
-     actualTables: ds_site-test.store_list
-     databaseStrategy :
-       shardingColumns : none
-       algorithmClassName : com.dangdang.ddframe.rdb.sharding.api.strategy.database.NoneDatabaseShardingAlgorithm
-     tableStrategy :
-       shardingColumns : none
-       algorithmClassName : com.dangdang.ddframe.rdb.sharding.api.strategy.table.NoneTableShardingAlgorithm
-   store_info:
-     actualTables: ds_site-test.store_info
-     databaseStrategy:
-       shardingColumns: none
-       algorithmClassName: com.dangdang.ddframe.rdb.sharding.api.strategy.database.NoneDatabaseShardingAlgorithm
-     tableStrategy:
-       shardingColumns: none
-       algorithmClassName: com.dangdang.ddframe.rdb.sharding.api.strategy.table.NoneTableShardingAlgorithm
 
 
 props: 
